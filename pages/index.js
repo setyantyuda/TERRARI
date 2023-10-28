@@ -1,6 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
+
 import { Container } from '../components/container'
 import { HeroBanner } from '../components/hero'
+import { Product } from '../components/product'
+import { productList } from '../utils/productList'
 
 export default function Home() {
   return (
@@ -14,15 +16,9 @@ export default function Home() {
         </div>
 
         <div className='flex justify-evenly mt-12'>
-          <div>
-            <img src='/product-images/1.jpg' alt='' className='object-cover w-[300px] h-[300px] rounded-md hover:scale-105 transition-all cursor-pointer'/>
-          </div>
-          <div>
-            <img src='/product-images/2.jpg' alt='' className='object-cover w-[300px] h-[300px] rounded-md hover:scale-105 transition-all cursor-pointer'/>
-          </div>
-          <div>
-            <img src='/product-images/3.jpg' alt='' className='object-cover w-[300px] h-[300px] rounded-md hover:scale-105 transition-all cursor-pointer'/>
-          </div>
+          {productList.slice(0, 3).map((item, i) => (
+            <Product key={i} img={item.image} name={item.name} price={item.price} id={item.id}/>
+          ))}
         </div>
 
         <div className='text-3xl font-semibold mt-12'>
@@ -30,15 +26,9 @@ export default function Home() {
         </div>
 
         <div className='flex justify-evenly mt-12'>
-          <div>
-            <img src='/product-images/4.jpg' alt='' className='object-cover w-[300px] h-[300px] rounded-md hover:scale-105 transition-all cursor-pointer'/>
-          </div>
-          <div>
-            <img src='/product-images/5.jpg' alt='' className='object-cover w-[300px] h-[300px] rounded-md hover:scale-105 transition-all cursor-pointer'/>
-          </div>
-          <div>
-            <img src='/product-images/6.jpg' alt='' className='object-cover w-[300px] h-[300px] rounded-md hover:scale-105 transition-all cursor-pointer'/>
-          </div>
+          {productList.slice(3, 6).map((item, i) => (
+            <Product key={i} img={item.image} name={item.name} price={item.price} id={item.id} />
+          ))}
         </div>
       </div>
     </>
