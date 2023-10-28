@@ -20,7 +20,7 @@ export const Navbar = () => {
   return (
     <>
         <div className='flex py-5 px-8 font-bold shadow-xl fixed z-20 bg-white w-full'>
-            <div className='w-[25%] cursor-pointer' onClick={() => handleNavigate('/')}>TERRARI</div>
+            <div className='w-[25%] text-2xl cursor-pointer' onClick={() => handleNavigate('/')}>TERRARI</div>
             <div className='w-[50%] flex justify-evenly'>
                 <div className='my-auto cursor-pointer' onClick={() => handleNavigate('/')}>HOME</div>
                 <div className='my-auto cursor-pointer' onClick={() => handleNavigate('/products')}>PRODUCTS</div>
