@@ -17,7 +17,7 @@ export default function Home() {
 
         <div className='flex justify-evenly mt-12'>
           {productList.slice(0, 3).map((item, i) => (
-            <Product key={i} img={item.image} name={item.name} price={item.price} id={item.id}/>
+            <Product key={i} data={item}/>
           ))}
         </div>
 
@@ -27,7 +27,7 @@ export default function Home() {
 
         <div className='flex justify-evenly mt-12'>
           {productList.slice(3, 6).map((item, i) => (
-            <Product key={i} img={item.image} name={item.name} price={item.price} id={item.id} />
+            <Product key={i} data={item} />
           ))}
         </div>
       </div>

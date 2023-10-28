@@ -27,7 +27,12 @@ const ProductDetail = () => {
     }, [id])
 
     const handleAddToCart = () => {
-        dispatch({ type: 'ADD_TO_CART', payload: id });
+        dispatch({ type: 'ADD_TO_CART', payload: data });
+    };
+
+    const handleCheckout = () => {
+        dispatch({ type: 'ADD_TO_CART', payload: data });
+        window.location.href = "/checkout"
     };
 
 
@@ -42,10 +47,10 @@ const ProductDetail = () => {
                 <div className='font-semibold'>{"BUY NOW BEFORE IT'S TOO LATE"}</div>
                 <div className='text-4xl font-bold'>{data?.name}</div>
                 <div className=''>{data?.desc}</div>
-                <div className='font-bold text-2xl'>Rp. {data?.price?.toLocaleString("id-ID")}</div>
+                <div className='font-bold text-2xl'>Rp {data?.price?.toLocaleString("id-ID")}</div>
                 <div className='space-y-2'>
                     <div onClick={handleAddToCart} className="cursor-pointer border-solid border-2 rounded-xl text-xl text-center border-black font-bold py-2">+ Add Cart</div>
-                    <div className="cursor-pointer border-solid border-2 rounded-xl text-xl text-center border-black font-bold py-2">Buy Now</div>
+                    <div onClick={handleCheckout} className="cursor-pointer border-solid border-2 rounded-xl text-xl text-center border-black font-bold py-2">Buy Now</div>
                 </div>
             </div>
         </div>

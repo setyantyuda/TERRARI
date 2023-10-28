@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'left': '-9px 17px 25px -2px rgba(0,0,0,0.63)',
+      }
+    },
   },
   plugins: [],
 }

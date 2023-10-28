@@ -10,7 +10,7 @@ const ProductsPage = () => {
         <div>
             <div className="grid-cols-3 gap-12 grid mt-12">
                 {productList.map((item, i) => (
-                  <Product key={i} img={item.image} name={item.name} price={item.price} id={item.id}/>
+                  <Product key={i} data={item}/>
                 ))}
             </div>
         </div>

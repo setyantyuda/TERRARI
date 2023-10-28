@@ -1,3 +1,4 @@
+import { Router } from 'react-router-dom'
 import { Container } from '../components/container'
 import { Footer } from '../components/footer'
 import { Navbar } from '../components/navbar'
@@ -9,15 +10,15 @@ const MyApp = ({
   pageProps: { ...pageProps },
 }) => {
   return (
-    <div className='relative h-full pb-72'>
-      <CartProvider>
+    <CartProvider>
+      <div className='relative h-full pb-72'>
         <Navbar/>
         <Container>
           <Component {...pageProps} />
           <Footer/>
         </Container>
-      </CartProvider>
-    </div>
+      </div>
+    </CartProvider>
   )
 }
 
