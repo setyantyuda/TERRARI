@@ -10,7 +10,7 @@ export default function Home() {
       <HeroBanner/>
 
       {/* main components */}
-      <div className='mt-32'>
+      <div className='mt-20'>
         <div className='text-3xl font-semibold mt-12'>
           BEST SELLER
         </div>

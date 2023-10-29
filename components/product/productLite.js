@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useCart } from '../../utils/cart';
+import Link from 'next/link';
 
 export const ProductLite = (props) => {
     const { dispatch, state } = useCart();
@@ -26,14 +27,13 @@ export const ProductLite = (props) => {
         }
     }, [count])
 
-    const handleNavigate = () => {
-        window.location.href = `/products/${props.data.id}`
-    }
 
   return (
     <div className='bg-white mb-5 border-2 border-black border-solid w-full p-3 rounded-md relative'>
         <div className='flex'>
-            <img onClick={handleNavigate} src={props.data.image} alt='' className='cursor-pointer w-[50%] h-28 aspect-square rounded-md object-cover'/>
+            <Link href={`/products/${props.data.id}`} className='w-[50%]'>
+                <img src={props.data.image} alt='' className='cursor-pointer w-full h-28 aspect-square rounded-md object-cover'/>
+            </Link>
             <div className='ml-3'>
                 <div className='h-[35%] font-bold'>{props.data.name}</div>
                 <div className='h-[30%] '>Rp {props.data?.totalPrice?.toLocaleString("id-ID")}</div>

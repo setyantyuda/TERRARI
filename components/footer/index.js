@@ -4,7 +4,7 @@ import React from 'react'
 export const Footer = () => {
   return (
     <div className='bottom-0 absolute w-full max-w-[1100px]'>
-      <div className='flex justify-between px-20 text-white bg-[#737373] rounded-t-xl py-5 mt-32'>
+      <div className='flex justify-between px-20 text-white bg-[#737373] rounded-t-xl py-5'>
         <div className='w-[30%]'>
           <div className='font-bold'>Jakarta Office</div>
           <div className='mt-3'>

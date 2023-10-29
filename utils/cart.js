@@ -11,10 +11,10 @@ const initialState = {
 };
 
 const cartReducer = (state, action) => {
+  const itemToAdd = action.payload;
+  const existingItemIndex = state.cart.findIndex(item => item.id === itemToAdd.id);
   switch (action.type) {
     case 'ADD_TO_CART':
-      const itemToAdd = action.payload;
-      const existingItemIndex = state.cart.findIndex(item => item.id === itemToAdd.id);
 
         if (existingItemIndex !== -1) {
             const updatedCart = state.cart.map((item, index) => {
@@ -38,12 +38,9 @@ const cartReducer = (state, action) => {
             return { ...state, cart: [...state.cart, newCartItem] };
         }
     case 'DECREASE_QUANTITY':
-        const itemToDecrease = action.payload;
-        const existingDecItemIndex = state.cart.findIndex(item => item.id === itemToDecrease.id);
-    
-        if (existingDecItemIndex !== -1) {
+        if (existingItemIndex !== -1) {
             const updatedCart = state.cart.map((item, index) => {
-            if (index === existingDecItemIndex) {
+            if (index === existingItemIndex) {
                 const newQuantity = Math.max(item.quantity - 1, 1);
                 return {
                 ...item,

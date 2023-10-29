@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import { productList } from '../../../utils/productList'
 import { PageTitle } from '../../../components/PageTitle'
 import { useCart } from '../../../utils/cart'
+import Link from 'next/link'
 
 const ProductDetail = () => {
     const { query } = useRouter()
@@ -32,7 +33,6 @@ const ProductDetail = () => {
 
     const handleCheckout = () => {
         dispatch({ type: 'ADD_TO_CART', payload: data });
-        window.location.href = "/checkout"
     };
 
 
@@ -48,9 +48,11 @@ const ProductDetail = () => {
                 <div className='text-4xl font-bold'>{data?.name}</div>
                 <div className=''>{data?.desc}</div>
                 <div className='font-bold text-2xl'>Rp {data?.price?.toLocaleString("id-ID")}</div>
-                <div className='space-y-2'>
-                    <div onClick={handleAddToCart} className="cursor-pointer border-solid border-2 rounded-xl text-xl text-center border-black font-bold py-2">+ Add Cart</div>
-                    <div onClick={handleCheckout} className="cursor-pointer border-solid border-2 rounded-xl text-xl text-center border-black font-bold py-2">Buy Now</div>
+                <div className=''>
+                    <div onClick={handleAddToCart} className="mb-2 cursor-pointer border-solid border-2 rounded-xl text-xl text-center border-black font-bold py-2">+ Add Cart</div>
+                    <Link href="/checkout">
+                        <div onClick={handleCheckout} className="cursor-pointer bg-yellow-100 border-solid border-2 rounded-xl text-xl text-center border-black font-bold py-2">Buy Now</div>
+                    </Link>
                 </div>
             </div>
         </div>
