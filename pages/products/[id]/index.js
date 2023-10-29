@@ -39,11 +39,11 @@ const ProductDetail = () => {
   return (
     <>
         <PageTitle title="SHOP NOW"/>
-        <div className='mt-12 flex justify-between space-x-8'>
-            <div className='w-[500px] h-full'>
+        <div className='mt-12 md:flex justify-between md:space-x-8'>
+            <div className='md:w-[500px] h-full'>
                 <img src={data?.image} alt='' className='aspect-square rounded-md object-cover w-full h-full'/>
             </div>
-            <div className='w-[50%] space-y-5'>
+            <div className='md:w-[50%] space-y-5 px-8 md:px-0 mt-8 md:mt-0'>
                 <div className='font-semibold'>{"BUY NOW BEFORE IT'S TOO LATE"}</div>
                 <div className='text-4xl font-bold'>{data?.name}</div>
                 <div className=''>{data?.desc}</div>

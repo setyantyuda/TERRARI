@@ -3,8 +3,8 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='bottom-0 absolute w-full max-w-[1100px]'>
-      <div className='flex justify-between px-20 text-white bg-[#737373] rounded-t-xl py-5'>
+    <div className='bottom-0 absolute w-full md:max-w-[1100px] max-w-[420px]'>
+      <div className='flex justify-between px-8 md:px-20 text-white bg-[#737373] rounded-t-xl py-5'>
         <div className='w-[30%]'>
           <div className='font-bold'>Jakarta Office</div>
           <div className='mt-3'>
@@ -16,17 +16,17 @@ export const Footer = () => {
         </div>
         <div className='w-[30%]'>
           <div className="text-center font-bold">Contact Us</div>
-          <div className='flex justify-center space-x-3 mt-3'>
-            <img src='/facebook.png' alt='' className='w-10 h-w-10 object-cover hover:scale-105 transition-all cursor-pointer'/>
-            <img src='/whatsapp.png' alt='' className='w-10 h-w-10 object-cover hover:scale-105 transition-all cursor-pointer'/>
+          <div className='md:flex justify-center md:space-y-0 space-y-2 md:space-x-3 mt-3'>
+            <img src='/facebook.png' alt='' className='w-10 h-w-10 mx-auto md:mx-0 object-cover hover:scale-105 transition-all cursor-pointer'/>
+            <img src='/whatsapp.png' alt='' className='w-10 h-w-10 mx-auto md:mx-0 object-cover hover:scale-105 transition-all cursor-pointer'/>
           </div>
         </div>
         <div className='w-[30%]'>
           <div className="text-right font-bold">Follow Us</div>
-          <div className='flex justify-end space-x-3 mt-3'>
-            <img src='/twitter.png' alt='' className='w-10 h-w-10 object-cover hover:scale-105 transition-all cursor-pointer'/>
-            <img src='/facebook.png' alt='' className='w-10 h-w-10 object-cover hover:scale-105 transition-all cursor-pointer'/>
-            <img src='/instagram.png' alt='' className='w-10 h-w-10 object-cover hover:scale-105 transition-all cursor-pointer'/>
+          <div className='md:flex justify-end md:space-y-0 space-y-2 md:space-x-3 mt-3'>
+            <img src='/twitter.png' alt='' className='w-10 h-w-10 mx-auto md:mx-0 object-cover hover:scale-105 transition-all cursor-pointer'/>
+            <img src='/facebook.png' alt='' className='w-10 h-w-10 mx-auto md:mx-0 object-cover hover:scale-105 transition-all cursor-pointer'/>
+            <img src='/instagram.png' alt='' className='w-10 h-w-10 mx-auto md:mx-0 object-cover hover:scale-105 transition-all cursor-pointer'/>
           </div>
         </div>
       </div>

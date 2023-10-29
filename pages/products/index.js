@@ -7,12 +7,12 @@ const ProductsPage = () => {
   return (
     <>
         <PageTitle title="All Products" />
-        <div>
-            <div className="grid-cols-3 gap-12 grid mt-12">
-                {productList.map((item, i) => (
-                  <Product key={i} data={item}/>
-                ))}
-            </div>
+        <div className='px-8 md:px-0'>
+          <div className="md:grid-cols-3 md:gap-12 md:grid md:space-y-0 space-y-12 mt-12">
+              {productList.map((item, i) => (
+                <Product key={i} data={item}/>
+              ))}
+          </div>
         </div>
     </>
   )

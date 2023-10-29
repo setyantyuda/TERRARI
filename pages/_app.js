@@ -11,7 +11,7 @@ const MyApp = ({
 }) => {
   return (
     <CartProvider>
-      <div className='relative h-full pb-72'>
+      <div className='relative h-full md:pb-72 pb-96'>
         <Navbar/>
         <Container>
           <Component {...pageProps} />

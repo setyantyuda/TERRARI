@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const CheckoutBar = (props) => {
   return (
-    <div className={`pl-8 pr-4 fixed ${props.show ? "right-0" : "-right-full"} transition-all duration-400 top-0 bottom-0 w-[30%] bg-[#eaeaea] rounded-l-xl z-30 shadow-left`}>
+    <div className={`pl-8 pr-4 fixed ${props.show ? "right-0" : "-right-full"} transition-all duration-400 top-0 bottom-0 w-full md:w-[30%] bg-[#eaeaea] rounded-l-xl z-30 md:shadow-left`}>
         <div onClick={props.onClose} className='cursor-pointer absolute top-5 left-8 text-4xl z-50 font-bold'>x</div>
         <div className='flex justify-end mt-8 pr-2'>
             <PageTitle title="MY CART"/>

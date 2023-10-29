@@ -10,12 +10,12 @@ export default function Home() {
       <HeroBanner/>
 
       {/* main components */}
-      <div className='mt-20'>
+      <div className='mt-20 px-8 md:px-0'>
         <div className='text-3xl font-semibold mt-12'>
           BEST SELLER
         </div>
 
-        <div className='flex justify-evenly mt-12'>
+        <div className='md:flex space-y-8 md:space-y-0 md:justify-evenly mt-12'>
           {productList.slice(0, 3).map((item, i) => (
             <Product key={i} data={item}/>
           ))}
@@ -25,7 +25,7 @@ export default function Home() {
           OUR PRODUCTS
         </div>
 
-        <div className='flex justify-evenly mt-12'>
+        <div className='md:flex space-y-8 md:space-y-0 justify-evenly mt-12'>
           {productList.slice(3, 6).map((item, i) => (
             <Product key={i} data={item} />
           ))}

@@ -3,20 +3,25 @@ import { useCart } from '../../utils/cart'
 import { useState } from 'react';
 import Link from 'next/link'
 import { CheckoutBar } from '../checkoutbar';
+import { NavbarMobile } from './navbarMobile';
 
 export const Navbar = () => {
     const { state } = useCart()
+    const [nav, showNav] = useState(false)
     const [cart, showCart] = useState(false)
     const totalPrice = state.cart.reduce((accumulator, currentItem) => accumulator + currentItem.totalPrice, 0);
   return (
     <>
-        <div className='flex py-5 px-8 font-bold shadow-xl fixed z-20 bg-white w-full'>
-            <div className='w-[25%] text-2xl cursor-pointer'>
+        <div className='flex justify-between md:justify-normal py-5 md:px-12 px-4 font-bold shadow-xl fixed z-20 bg-white w-full'>
+            <div className='md:hidden block'>
+                <img onClick={() => showNav(true)} src='/menu.png' alt='' className='w-9 h-9 object-cover'/>
+            </div>
+            <div className='w-[30%] my-auto md:w-[25%] text-2xl cursor-pointer'>
                 <Link href="/">
                     TERRARI
                 </Link>
             </div>
-            <div className='w-[50%] flex justify-evenly'>
+            <div className='hidden md:flex w-[50%] my-auto justify-evenly'>
                 <Link href="/">
                     <div className='my-auto cursor-pointer'>HOME</div>
                 </Link>
@@ -30,8 +35,8 @@ export const Navbar = () => {
                     <div className='my-auto cursor-pointer'>CONTACT US</div>
                 </Link>
             </div>
-            <div className='flex justify-evenly w-[25%]'>
-                <img src='/search.png' alt='' className='w-8 h-8 object-cover cursor-pointer'/>
+            <div className='flex justify-end space-x-8 w-[50%] md:w-[25%]'>
+                {/* <img src='/search.png' alt='' className='w-8 h-8 object-cover cursor-pointer'/> */}
                 <img src='/user.png' alt='' className='w-8 h-8 object-cover cursor-pointer'/>
                 <div className='relative' onClick={() => showCart(true)}>
                     <img src='/cart.png' alt='' className='w-8 h-8 object-cover cursor-pointer'/>
@@ -51,6 +56,13 @@ export const Navbar = () => {
             totalPrice={totalPrice}
             onClose={() => showCart(false)}
             onOpen={() => showCart(true)}
+        />
+        <NavbarMobile 
+            show={nav}
+            data={state.cart}
+            totalPrice={totalPrice}
+            onClose={() => showNav(false)}
+            onOpen={() => showNav(true)}
         />
     </>
   )
