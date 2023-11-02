@@ -70,9 +70,9 @@ const Checkout = () => {
         </div>
       </div>
       <div className={`${modal ? "" : "hidden"} fixed bg-black bg-opacity-30 mx-auto my-auto border-2 z-30 top-0 bottom-0 right-0 left-0`}>
-        <div className='flex space-x-3 justify-between fixed w-[800px] h-[530px] px-8 py-10 my-auto mx-auto rounded-xl top-0 bottom-0 left-0 right-0 bg-white'>
+        <div className='md:flex space-x-3 justify-between fixed md:w-[800px] md:h-[530px] px-8 py-10 my-auto mx-auto rounded-xl top-0 bottom-0 left-0 right-0 bg-white'>
           <div onClick={() => setModal(false)} className='absolute right-10 text-3xl font-bold top-5 cursor-pointer'>X</div>
-          <div className='w-[50%] mt-5'>
+          <div className='md:w-[50%] mt-5'>
             <div className='mb-5'>
               <div>Name</div>
               <div className='font-bold'>{name}</div>
@@ -90,7 +90,7 @@ const Checkout = () => {
               <div className='font-bold'>Rp {totalPrice.toLocaleString("id-ID")}</div>
             </div>
           </div>
-          <div className='w-[50%] mt-5'>
+          <div className='md:w-[50%] mt-5'>
             <div className='mb-5'>
               <div>Bank Account</div>
               <div className='font-bold'>BCA</div>
