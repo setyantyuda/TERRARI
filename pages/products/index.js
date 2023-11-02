@@ -9,9 +9,9 @@ const ProductsPage = () => {
   return (
     <>
         <PageTitle title="All Products" />
-        <div className='my-12'>
+        <div className='my-12 px-8 md:px-0'>
           <div className='text-xl my-3'>Category</div>
-          <div className='grid grid-cols-4 gap-4'>
+          <div className='grid md:grid-cols-4 grid-cols-2 gap-4'>
               <div onClick={() => setCategory("all")} className='relative px-4 py-2 first-letter cursor-pointer hover:scale-105 transition-all duration-150 font-bold rounded-xl w-full'>
                 <img src='/category-bg.jpg' alt='' className='rounded-xl absolute opacity-80 right-0 left-0 top-0 bottom-0 -z-10 w-full h-full object-cover'/>
                 <div className='text-white text-center w-full h-full text-md'>All Products</div>
