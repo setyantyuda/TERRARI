@@ -10,7 +10,7 @@ export const Product = (props) => {
     };
 
   return (
-    <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} className='relative md:w-[300px] md:h-[300px] overflow-hidden aspect-square rounded-md hover:scale-110 transition-all'>
+    <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} className='relative md:w-[300px] md:h-[300px] overflow-hidden aspect-square rounded-md mx-auto hover:scale-110 transition-all'>
         <Link href={`/products/${props.data.id}`}>
             <img src={props.data.image} alt='' className='w-full h-full rounded-md object-cover cursor-pointer'/>
         </Link>
