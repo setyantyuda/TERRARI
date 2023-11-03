@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useCart } from '../../utils/cart'
 import { useState } from 'react';
 import Link from 'next/link'
@@ -10,9 +10,18 @@ export const Navbar = () => {
     const [nav, showNav] = useState(false)
     const [cart, showCart] = useState(false)
     const totalPrice = state.cart.reduce((accumulator, currentItem) => accumulator + currentItem.totalPrice, 0);
+    const [hide, setHide] = useState(false)
+
+    useEffect(() => {
+        if (window.location.pathname === "/sign-in") {
+            setHide(true)
+        } else {
+            setHide(false)
+        }
+    })
   return (
     <>
-        <div className='flex justify-between md:justify-normal py-5 md:px-12 px-4 font-bold shadow-xl fixed z-20 bg-white w-full'>
+        <div className={`${hide ? "hidden" : ""} flex justify-between md:justify-normal py-5 md:px-12 px-4 font-bold shadow-xl fixed z-20 bg-white w-full`}>
             <div className='md:hidden block'>
                 <img onClick={() => showNav(true)} src='/menu.png' alt='' className='w-9 h-9 object-cover'/>
             </div>

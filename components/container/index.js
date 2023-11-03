@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const Container = ({children}) => {
+  const [auth, setAuth] = useState(false)
+
+  useEffect(() => {
+      if (window.location.pathname === "/sign-in") {
+        setAuth(true)
+      } else {
+        setAuth(false)
+      }
+  })
   return (
-    <div className='md:max-w-[1100px] max-w-[420px] w-full mx-auto pt-[72px]'>
+    <div className={`${auth ? "" : "md:max-w-[1100px] max-w-[420px] pt-[72px]"} w-full mx-auto`}>
         {children}
     </div>
   )

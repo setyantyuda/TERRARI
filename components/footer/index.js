@@ -1,9 +1,17 @@
-
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const Footer = () => {
+  const [hide, setHide] = useState(false)
+
+  useEffect(() => {
+      if (window.location.pathname === "/sign-in") {
+          setHide(true)
+      } else {
+          setHide(false)
+      }
+  })
   return (
-    <div className='bottom-0 absolute w-full md:max-w-[1100px] max-w-[420px]'>
+    <div className={`${hide ? "hidden" : ""} bottom-0 absolute w-full md:max-w-[1100px] max-w-[420px]`}>
       <div className='flex justify-between px-8 md:px-20 text-white bg-[#737373] rounded-t-xl py-5'>
         <div className='w-[30%]'>
           <div className='font-bold'>Jakarta Office</div>
